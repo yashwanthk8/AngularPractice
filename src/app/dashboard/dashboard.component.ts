@@ -10,7 +10,24 @@ import {FooterComponent} from './footer/footer.component';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+selectedUser='';
 
-  userName = 'Yashwanth';
-  role = 'Angular Developer';
+onUserSelected(name: string){
+  this.selectedUser = name;
+}
+
+  users = [
+  {
+    userName:'Yashwanth',
+    role:'Angular Developer'
+  },
+  {
+    userName:'John',
+    role:'Tester'
+  },
+  {
+    userName:'David',
+    role:'Manager'
+  }
+];
 }
