@@ -10,6 +10,11 @@ import {FooterComponent} from './footer/footer.component';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+selectedUser='';
+
+onUserSelected(name: string){
+  this.selectedUser = name;
+}
 
   users = [
   {

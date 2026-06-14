@@ -1,5 +1,10 @@
 <app-header></app-header>
 @for (user of users; track user.userName){
-  <app-user [userName]="user.userName" [role]="user.role"></app-user>
+  <app-user [userName]="user.userName" [role]="user.role"
+   (userSelected)="onUserSelected($event)"></app-user>
 }
-<app-footer></app-footer>
+@if(selectedUser) {
+  <h2>Selected User: {{ selectedUser }}</h2>
+}
+<app-footer>
+</app-footer>
