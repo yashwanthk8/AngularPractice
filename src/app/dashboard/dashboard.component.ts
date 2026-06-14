@@ -11,6 +11,18 @@ import {FooterComponent} from './footer/footer.component';
 })
 export class DashboardComponent {
 
-  userName = 'Yashwanth';
-  role = 'Angular Developer';
+  users = [
+  {
+    userName:'Yashwanth',
+    role:'Angular Developer'
+  },
+  {
+    userName:'John',
+    role:'Tester'
+  },
+  {
+    userName:'David',
+    role:'Manager'
+  }
+];
 }

@@ -1,3 +1,5 @@
 <app-header></app-header>
-<app-user [userName]="userName" [role]="role"></app-user>
+@for (user of users; track user.userName){
+  <app-user [userName]="user.userName" [role]="user.role"></app-user>
+}
 <app-footer></app-footer>

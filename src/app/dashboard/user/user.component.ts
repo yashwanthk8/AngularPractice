@@ -9,8 +9,4 @@ import { Component, Input } from '@angular/core';
 export class UserComponent {
   @Input() userName='';
   @Input() role='';
-
-  user="normal yash";
-  role1="normal devloper";
-
 }
