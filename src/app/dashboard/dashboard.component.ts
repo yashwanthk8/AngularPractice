@@ -3,9 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
+import {CardComponent} from './card/card.component';
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterOutlet, HeaderComponent, UserComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, UserComponent, FooterComponent, CardComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
