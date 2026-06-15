@@ -1,16 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
   imports: [],
   templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+  styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-  @Input() userName='';
-  @Input() role='';
+  @Input() userName = '';
+  @Input() role = '';
 
-  user="normal yash";
-  role1="normal devloper";
-
+  @Output() userSelected = new EventEmitter<string>();
+  selectUser(){
+    this.userSelected.emit(this.userName);
+  }
 }
