@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +11,11 @@ import {CardComponent} from './card/card.component';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+@ViewChild(UserComponent) userComponent!: UserComponent;
+
+callGreet(){
+  this.userComponent.greet();
+}
 selectedUser='';
 
 onUserSelected(name: string){
@@ -31,4 +36,5 @@ onUserSelected(name: string){
     role:'Manager'
   }
 ];
+
 }
