@@ -14,4 +14,8 @@ export class UserComponent {
   selectUser(){
     this.userSelected.emit(this.userName);
   }
+  greet()
+  {
+    alert("hello yashwanth");
+  }
 }
