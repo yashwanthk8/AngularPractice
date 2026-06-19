@@ -18,4 +18,7 @@ export class UserComponent {
   {
     alert("hello yashwanth");
   }
+   highlight() {
+    alert(`${this.userName} highlighted`);
+  }
 }

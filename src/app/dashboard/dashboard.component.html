@@ -1,3 +1,10 @@
+
+<h1 style="color: brown;">Topic is ElementRef</h1>
+<input #nameInput>
+<button (click)="focusInput()">focus Input</button>
+
+<button (click)="printValue()">testElem</button>
+
 <app-header></app-header>
 @for (user of users; track user.userName){
   <app-user [userName]="user.userName" [role]="user.role"
@@ -7,7 +14,7 @@
   <h2>Selected User: {{ selectedUser }}</h2>
 }
 
-<h1>content projection</h1>
+<h1 style="color: brown;">Topic is Content Projection</h1>
 
 <app-card>
   <h2>this is inside dashboard compon</h2>
@@ -19,10 +26,22 @@
   <h3>2. second point</h3>
 </app-card>
 
-<h1>This is ViewChild concept</h1>
+<h1 style="color: brown;">This is ViewChild concept</h1>
 
 <button (click)="callGreet()">
   Greet User
 </button>
+
+<h1 style="color: brown;">Topic is ViewChildren concept</h1>
+
+<app-user [userName]="'yashwanth kumar'"></app-user>
+<app-user [userName]="'monika'"></app-user>
+<app-user [userName]="'keeru'"></app-user>
+
+<h1 style="color: brown;">Topic is ElementRef</h1>
+
+
 <app-footer>
 </app-footer>
+
+
