@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +11,21 @@ import {CardComponent} from './card/card.component';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+
+
+
+  @ViewChild('nameInput')
+  nameInput!:ElementRef;
+
+  printValue() {
+  console.log(this.nameInput.nativeElement.value);
+}
+
+  focusInput()
+  {
+    this.nameInput.nativeElement.focus();
+  }
+
 @ViewChild(UserComponent) userComponent!: UserComponent;
 
 @ViewChildren(UserComponent) users1!: QueryList<UserComponent>;
