@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,6 +12,14 @@ import {CardComponent} from './card/card.component';
 })
 export class DashboardComponent {
 @ViewChild(UserComponent) userComponent!: UserComponent;
+
+@ViewChildren(UserComponent) users1!: QueryList<UserComponent>;
+
+highlightallUsers(){
+  this.users1.forEach(user=>{
+    user.highlight();
+  });
+}
 
 callGreet(){
   this.userComponent.greet();
