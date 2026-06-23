@@ -3,11 +3,12 @@ import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {CardComponent} from './card/card.component';
+import { UserSearchComponent } from './user-search/user-search.component';
 import {of} from 'rxjs';
 import {map} from 'rxjs/operators';
 @Component({
   selector: 'app-dashboard',
-  imports: [HeaderComponent, UserComponent, FooterComponent, CardComponent],
+  imports: [HeaderComponent, UserComponent, FooterComponent, CardComponent,UserSearchComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

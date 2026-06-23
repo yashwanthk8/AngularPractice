@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,19 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  getUser(id: number): Observable<any> {
+    return this.http.get(
+      `https://jsonplaceholder.typicode.com/users/${id}`
+    );
+  }
+
   ggetUsers() {
     return this.http.get<any[]>(this.apiUrl).pipe(
       map((users: any[]) =>
         users.map(user => ({
 
           fullName: `${user.name} ${user.id}`,
-          
+
         }))
       )
     );
