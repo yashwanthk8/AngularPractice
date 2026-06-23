@@ -1,17 +1,22 @@
 import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {CardComponent} from './card/card.component';
+import { UserSearchComponent } from './user-search/user-search.component';
+import {of} from 'rxjs';
+import {map} from 'rxjs/operators';
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterOutlet, HeaderComponent, UserComponent, FooterComponent, CardComponent],
+  imports: [HeaderComponent, UserComponent, FooterComponent, CardComponent,UserSearchComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
 
+  constructor() {
+    of(1,2,3).pipe(map(num => num * 10)).subscribe(console.log);
+  }
 
 
   @ViewChild('nameInput')
