@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+  @HostBinding('class.hovered') isHovered = true;
+
+  @HostListener('click') onClick(){
+    console.log('footer got clicked');
+  }
+
 
 }
