@@ -1,8 +1,8 @@
+import { TestService } from './../../services/test.service';
 import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-
 @Component({
   selector: 'app-user-search',
   standalone: true,
@@ -12,7 +12,13 @@ import { switchMap } from 'rxjs/operators';
 })
 export class UserSearchComponent {
  userSelection$ = new Subject<number>();
+
+
 ngOnInit() {
+
+  this.testService.userText$.subscribe((value) => {
+    console.log('UserSearch received:', value);
+  });
 
   this.userSelection$
     .pipe(
@@ -32,7 +38,7 @@ ngOnInit() {
 
 }
   user: any;
- constructor(private userService: UserService) {}
+ constructor(private userService: UserService, private testService: TestService) {}
 
   loadUser(id: number) {
 
