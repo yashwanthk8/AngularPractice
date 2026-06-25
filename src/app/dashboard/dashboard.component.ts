@@ -1,3 +1,4 @@
+import { TestService } from './../services/test.service';
 import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
@@ -6,6 +7,7 @@ import {CardComponent} from './card/card.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import {of} from 'rxjs';
 import {map} from 'rxjs/operators';
+
 @Component({
   selector: 'app-dashboard',
   imports: [HeaderComponent, UserComponent, FooterComponent, CardComponent,UserSearchComponent],
@@ -14,8 +16,9 @@ import {map} from 'rxjs/operators';
 })
 export class DashboardComponent {
 
-  constructor() {
+  constructor(private testService: TestService) {
     of(1,2,3).pipe(map(num => num * 10)).subscribe(console.log);
+    this.testService.emitUserText('Hello from dashboard');
   }
 
 
