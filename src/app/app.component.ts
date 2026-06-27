@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import { RouterOutlet } from '@angular/router';
 import { UserService } from './services/user.service';
 @Component({
   selector: 'app-root',
-  imports: [DashboardComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
