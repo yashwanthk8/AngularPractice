@@ -7,14 +7,20 @@ import {CardComponent} from './card/card.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import {of} from 'rxjs';
 import {map} from 'rxjs/operators';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [HeaderComponent, UserComponent, FooterComponent, CardComponent,UserSearchComponent],
+  imports: [HeaderComponent, UserComponent, FooterComponent, CardComponent, UserSearchComponent, FormsModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+
+  userMsg: string='';
+  sendMsg(){
+    this.testService.emitUserText(this.userMsg)
+  }
 
   constructor(private testService: TestService) {
     of(1,2,3).pipe(map(num => num * 10)).subscribe(console.log);
