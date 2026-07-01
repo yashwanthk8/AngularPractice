@@ -1,0 +1,25 @@
+<select (change)="onCategoryChange($event)">
+  <option value="All">All</option>
+  <option value="Electronics">Electronics</option>
+  <option value="Furniture">Furniture</option>
+</select>
+
+<select (change)="onPriceChange($event)">
+  <option value="All">All</option>
+  <option value="Under 50000">Under 50000</option>
+  <option value="Above 50000">Above 50000</option>
+</select>
+
+<input
+  (input)="onSearchChange($event)"
+  type="text"
+  placeholder="Search Product"
+/>
+
+<hr>
+
+<div *ngFor="let product of filteredProducts">
+  {{ product.name }} - ₹{{ product.price }}
+</div>
+
+
