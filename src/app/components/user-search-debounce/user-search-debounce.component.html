@@ -1,0 +1,12 @@
+<h2>User Search</h2>
+
+<input type="text" placeholder="Search User" (input)="onSearch($event)" />
+
+<hr />
+
+<div *ngFor="let user of users">
+
+  <h3>{{user.id}} {{ user.name }} {{ user.email }}</h3>
+
+
+</div>
