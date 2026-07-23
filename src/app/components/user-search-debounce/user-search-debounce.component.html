@@ -1,0 +1,17 @@
+
+  <input
+    type="text"
+    placeholder="Search users..."
+    (input)="onSearch($event)"
+  />
+
+
+<div *ngFor="let user of users">
+  <img [src]="user.picture.medium" alt="User" />
+
+  <h3>
+    {{ user.name.first }} {{ user.name.last }}
+  </h3>
+
+  <p>{{ user.email }}</p>
+</div>
