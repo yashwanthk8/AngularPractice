@@ -8,8 +8,8 @@ export class SearchService {
 
   constructor(private http: HttpClient) {}
   getUsers(){
-    return this.http.get<any[]>(
-      'https://jsonplaceholder.typicode.com/users'
+    return this.http.get<any>(
+      'https://randomuser.me/api/?results=5000'
     );
   }
 

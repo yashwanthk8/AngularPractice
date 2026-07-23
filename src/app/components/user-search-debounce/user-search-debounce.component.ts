@@ -8,14 +8,15 @@ import { distinctUntilChanged } from 'rxjs';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-user-search-debounce',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './user-search-debounce.component.html',
-  styleUrl: './user-search-debounce.component.css',
+  styleUrls: ['./user-search-debounce.component.css'],
 })
 export class UserSearchDebounceComponent {
   constructor(private searchService: SearchService) {}
   users: any[] = [];
-  searchText$ = new Subject<string>(); //after if product owner says don't search the immediately wait for 500ms then do searching, then rxjs subject will be useful.
+  searchText$ = new Subject<string>();
   ngOnInit() {
     this.searchText$
       .pipe(
@@ -25,15 +26,19 @@ export class UserSearchDebounceComponent {
 
   this.searchService.getUsers().pipe(
 
-    map(users =>
+    map((response: any) =>
 
-      users.filter(user =>
+      response.results.filter((user: any) => {
 
-        user.name
-          .toLowerCase()
-          .includes(searchText.toLowerCase())
+        const fullName =
+          `${user.name.first} ${user.name.last}`.toLowerCase();
 
-      )
+        return (
+          fullName.includes(searchText.toLowerCase()) ||
+          user.email.toLowerCase().includes(searchText.toLowerCase())
+        );
+
+      })
 
     )
 
