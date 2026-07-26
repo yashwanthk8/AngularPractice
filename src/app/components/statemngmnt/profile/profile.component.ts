@@ -9,9 +9,10 @@ import { StatemngmntService } from '../../../services/statemngmnt.service';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
-constructor(public mngmntService: StatemngmntService){}
-userName="yash";
-updateName(){
-this.mngmntService.userName=this.userName;
-}
+  userName='';
+  constructor(public mngmntService: StatemngmntService){}
+updateName() {
+    this.mngmntService.updateUserName(this.userName);
+  }
+
 }
